@@ -1,6 +1,11 @@
+
+*{
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
 body{
     background-color: #faf8ef;
-    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    margin:80px 0px;
+    color: #776e65;
 }
 
 .box{
@@ -23,5 +28,50 @@ body{
     background-color: rgb(187, 173, 160);
     border-radius: 3px;
     padding:15px;
+    margin-top:50px;
+}
+
+.title{
+    font-size: 100px;
+    font-weight: bold;
+    margin:0px;
+    /* display: contents;
+    float:left; */
+}
+
+.heading{
+    display: inline-flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+.scoreboard{
+    text-align:center;
+    background: #bbada0;
+    margin-bottom: 50px;
+    padding: 20px 20px 0px;
+    border-radius: 4px;
+}
+
+.top_sc{
+    color: #eee4da;
+    font-weight: bold;
+    line-height: 15px;
+    font-size: 20px;
+}
+
+.bot_sc{
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+.ht{
+    margin-bottom:0px;
+    font-size: 25px;
+}
+
+.explanation{
+    font-size: 25px;
     margin-top:50px;
 }
