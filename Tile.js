@@ -5,6 +5,7 @@ export default class Tile{
     #tileElement
     #x
     #y
+    #value
 
     constructor(tileContainer, value = Math.random() > .8 ? 2 : 4 ){
         this.#tileElement = document.createElement("div")
@@ -12,10 +13,18 @@ export default class Tile{
         tileContainer.append(this.#tileElement)
         this.value = value
     }
+    set value(v){
+        this.#value = v
+        this.#tileElement.textContent = v
+        const power = Math.log2(v)
+    }
+    
     set x(value){
         this.#x = value
+        this.#tileElement.style.setProperty("--x", vlaue)
     }
     set y(value){
         this.#y = value
+        this.#tileElement.style.setProperty("--y", value)
     }
 }

@@ -1,7 +1,3 @@
-//import 
-
-// implement th
-
 const initial = boardChange(4)
 
 function boardChange(baseNum){
@@ -16,12 +12,14 @@ function boardChange(baseNum){
     switch(baseNum){
         case 2:
             grid.style.gridTemplate = "repeat(2, 1fr)/repeat(2, 1fr)"
+            grid.style.padding = "15px";
             grid.style.gap = "20px"
 
             //More code to clean out rows and columns
             break;
         case 4:
             grid.style.gap = "15px";
+            grid.style.padding = "15px";
             grid.style.gridTemplate = "repeat(4, 1fr)/repeat(4, 1fr)"
 
             //More code to clean out rows and columns
@@ -29,6 +27,7 @@ function boardChange(baseNum){
         case 8:
 
             grid.style.gap = "10px";
+            grid.style.padding = "10px";
             grid.style.gridTemplate = "repeat(8, 1fr)/repeat(8, 1fr)"
 
             //More code to clean out rows and columns

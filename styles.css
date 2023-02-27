@@ -23,9 +23,7 @@ body{
     display: grid;
     background-color: rgb(187, 173, 160);
     border-radius: 3px;
-    padding:15px;
     margin-top:50px;
-    width:470px;
     height:470px;
 }
 
@@ -88,3 +86,54 @@ body{
     cursor:pointer;
     font-weight: bold;
 }
+
+.combined{
+    
+}
+
+.tile{
+    --x: 1;
+    --y: 0;
+    --initialLeft : 15px;
+    --initialBot : 485px;
+    --cellWidth:107.5px;
+    --cellHeight:106.25px;
+    --gap:15px;
+    --bColor: rgb(238, 228, 218);
+    --color: rgb(119, 110, 101);
+    background-color: var(--bColor);
+    display:flex;
+    font-size: 49px;
+    color:var(--color);
+    position:relative;
+    font-weight: bold;
+    width:var(--cellWidth);
+    height:var(--cellHeight);
+    justify-content: center;
+    align-content: center;
+    line-height: 106.25px;
+    left: calc(var(--initialLeft) + (var(--x) * (var(--gap) + var(--cellWidth))));
+    bottom: calc(var(--initialBot) - (var(--y) * (var(--gap) + var(--cellHeight)))); 
+    border-radius: 3px;
+    transition: 100ms ease-in-out; 
+    
+    /* z-index:10; */
+   
+   
+
+    /* Variables to manipulate
+    font size
+    left
+    bottom
+    background-color
+    color
+    width
+    padding
+    font-size
+     */
+}
+
+/* is what I have so far fine?
+ */
+/*let me check real quick */
+
