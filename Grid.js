@@ -1,62 +1,12 @@
-//const initial = boardChange(4)
-
-// function boardChange(baseNum){
-//     const grid = document.querySelector('.grid')
-//     const tiles = document.querySelector('.tile')
-
-    
-//     grid.innerHTML = ""
-//     for (let i = 0; i < baseNum ** 2; i++){
-//         let newBox = document.createElement('button');
-//         newBox.classList.add('box'); 
-//         grid.append(newBox)
-//     }
-    
-//     switch(baseNum){
-//         case 2:
-//             grid.style.gridTemplate = "repeat(2, 1fr)/repeat(2, 1fr)"
-//             grid.style.padding = "15px";
-//             grid.style.gap = "20px"
-
-//             // tiles.style.setProperty("--initialLeft", "15px")
-//             // tiles.style.setProperty("--initialBot", "485px")
-//             // tiles.style.setProperty("gap", "15px")
-//             // tiles.style.setProperty("--cellWidth" , "227.5px")
-//             // tiles.style.setProperty("--cellHeight" , "225px")
-//             // tiles.style.setProperty("line-height" , "225px")
-//             // tiles.style.setProperty("line-height" , "225px")
-
-//             //More code to clean out rows and columns
-//             break;
-//         case 4:
-//             grid.style.gap = "15px";
-//             grid.style.padding = "15px";
-//             grid.style.gridTemplate = "repeat(4, 1fr)/repeat(4, 1fr)"
-
-//             //More code to clean out rows and columns
-//             break;
-//         case 8:
-
-//             grid.style.gap = "10px";
-//             grid.style.padding = "10px";
-//             grid.style.gridTemplate = "repeat(8, 1fr)/repeat(8, 1fr)"
-
-//             //More code to clean out rows and columns
-//             break;
-//     }
-// }
-
 const twoByTwo = document.getElementById("2-2")
 const fourByFour = document.getElementById("4-4")
 const eightByEight = document.getElementById("8-8")
 
-let gridSize = 4 
+let gridSize = 4
 let gridGap = 15
 let boxWidth = 107.5
 let boxHeight = 106.25
 let fontSize = 49
-
-
 
 //Values  will change depending on cerntain conditions 
 //8x8  gridSize: 8      gridGap: 10     boxHeight: 50px        boxWidth: 51.9px
@@ -76,17 +26,40 @@ export default class Grid{
         })
         console.log(this.#boxes)
     }
+
+    get #emptyBoxes(){
+        return this.#boxes.filter(box => box.tile == null)
+    }
+
+    randomEmptyBox(){
+        let randomIndex = Math.floor(Math.random()  * this.#emptyBoxes.length)
+        return this.#emptyBoxes[randomIndex]
+    }
+
 }
 //test check
 class Box{
     #element
     #x
     #y
+    #tile
     constructor(element, x, y){
         this.#element = element
         this.#x = x
         this.#y = y
+    }
 
+    get tile(){
+        return this.#tile
+    }
+
+    set tile(value){
+        this.#tile = value
+        if(value == null){
+            return
+        }
+        this.#tile.x = this.#x
+        this.#tile.y = this.#y
     }
 }
 
@@ -100,3 +73,4 @@ function createBoxes(grid){
     }
     return boxes
 }
+

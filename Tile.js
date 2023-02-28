@@ -5,7 +5,7 @@ export default class Tile{
     #tileElement
     #x
     #y
-    #value
+    #value 
 
     constructor(tileContainer, value = Math.random() > .8 ? 2 : 4 ){
         this.#tileElement = document.createElement("div")
@@ -16,7 +16,8 @@ export default class Tile{
     set value(v){
         this.#value = v
         this.#tileElement.textContent = v
-        const power = Math.log2(v)
+
+        //const power = Math.log2(v)
     }
     
     set x(value){

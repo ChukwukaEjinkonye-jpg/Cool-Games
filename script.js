@@ -1,4 +1,4 @@
-//import Tile from './Tile.js'
+import Tile from './Tile.js'
 import Grid from './Grid.js'
 ////////////////////
 ///// Variables
@@ -7,6 +7,10 @@ import Grid from './Grid.js'
 
 const grid = document.querySelector(".grid")
 const gameboard = new Grid(grid)
+console.log(gameboard.randomEmptyBox())
+
+gameboard.randomEmptyBox().tile = new Tile(grid)
+gameboard.randomEmptyBox().tile = new Tile(grid)
 
 ////////////////////
 ///// Functions 
